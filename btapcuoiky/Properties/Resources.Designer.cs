@@ -93,6 +93,36 @@ namespace btapcuoiky.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap backgroud_cd {
+            get {
+                object obj = ResourceManager.GetObject("backgroud_cd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap backgroud_cd2 {
+            get {
+                object obj = ResourceManager.GetObject("backgroud_cd2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap backgroud_cd3 {
+            get {
+                object obj = ResourceManager.GetObject("backgroud_cd3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap backgroud_group {
             get {
                 object obj = ResourceManager.GetObject("backgroud_group", resourceCulture);
@@ -126,6 +156,16 @@ namespace btapcuoiky.Properties {
         internal static System.Drawing.Bitmap cardback {
             get {
                 object obj = ResourceManager.GetObject("cardback", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hinhthu {
+            get {
+                object obj = ResourceManager.GetObject("hinhthu", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

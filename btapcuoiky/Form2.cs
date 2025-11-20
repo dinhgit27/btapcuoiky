@@ -63,6 +63,36 @@ namespace btapcuoiky
         private void Form2_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
+            // Lấy kích thước của khu vực làm việc bên trong Form
+            int formWidth = this.ClientSize.Width;
+            int formHeight = this.ClientSize.Height;
+
+            // Lấy kích thước của GroupBox
+            int groupWidth = groupBox3.Width;
+            int groupHeight = groupBox3.Height;
+
+            // Tính toán tọa độ X và Y để căn giữa
+            int x = (formWidth - groupWidth) / 2;
+            int y = (formHeight - groupHeight) / 2;
+
+            // Thiết lập vị trí mới
+            groupBox3.Location = new System.Drawing.Point(x, y);
+
+
+            label1.BackColor = System.Drawing.Color.Transparent;
+            label2.BackColor = System.Drawing.Color.Transparent;
+            groupBox1.BackColor = System.Drawing.Color.Transparent;
+            groupBox2.BackColor = System.Drawing.Color.Transparent;
+        }
+
+        private void rbHardcoreX3_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

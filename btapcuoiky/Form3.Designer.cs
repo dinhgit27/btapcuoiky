@@ -57,7 +57,7 @@
             // lblP2
             // 
             this.lblP2.AutoSize = true;
-            this.lblP2.Location = new System.Drawing.Point(374, 9);
+            this.lblP2.Location = new System.Drawing.Point(556, 9);
             this.lblP2.Name = "lblP2";
             this.lblP2.Size = new System.Drawing.Size(67, 13);
             this.lblP2.TabIndex = 5;
@@ -93,6 +93,7 @@
             this.Controls.Add(this.lblP1);
             this.Name = "Form3";
             this.Text = "Form3";
+            this.Load += new System.EventHandler(this.Form3_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

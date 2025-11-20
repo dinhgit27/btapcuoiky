@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Drawing.Drawing2D;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace btapcuoiky
 {
@@ -51,6 +52,20 @@ namespace btapcuoiky
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
+            int formWidth = this.ClientSize.Width;
+            int formHeight = this.ClientSize.Height;
+
+            // Lấy kích thước của GroupBox
+            int groupWidth = groupBox1.Width;
+            int groupHeight = groupBox1.Height;
+
+            // Tính toán tọa độ X và Y để căn giữa
+            int x = (formWidth - groupWidth) / 2;
+            int y = (formHeight - groupHeight) / 2;
+
+            // Thiết lập vị trí mới
+            groupBox1.Location = new System.Drawing.Point(x, y);
             label1.BackColor = System.Drawing.Color.Transparent;
             label2.BackColor = System.Drawing.Color.Transparent;
         }
