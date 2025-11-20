@@ -186,5 +186,83 @@ namespace btapcuoiky
 
             return false; 
         }
+        private void CheckVictory()
+        {
+            bool remaining = false;
+            foreach (Control c in pnlCards.Controls)
+            {
+                if (c.Visible) { remaining = true; break; }
+            }
+
+            if (!remaining)
+            {
+                gameTimer.Stop();
+                hardcoreTimer.Stop();
+                MessageBox.Show("Hoàn thành!", "Chúc mừng");
+                this.Close();
+            }
+        }
+
+        private void gameTimer_Tick(object sender, EventArgs e)
+        {
+
+            
+            if (timeLeft <= 0)
+            {
+                gameTimer.Stop();
+                hardcoreTimer.Stop();
+                
+                lblTime.Text = FormatTime(0);
+                MessageBox.Show("Hết giờ", "Thất bại");
+                this.Close();
+                return; 
+            }
+
+            timeLeft--;
+            lblTime.Text = FormatTime(timeLeft);
+        }
+
+        private void FlipTimer_Tick(object sender, EventArgs e)
+        {
+
+        }
+        private void Form3_Resize(object sender, EventArgs e)
+        {
+            if (pnlCards != null)
+            {
+                pnlCards.Left = (this.ClientSize.Width - pnlCards.Width) / 2;
+                pnlCards.Top = (this.ClientSize.Height - pnlCards.Height) / 2;
+            }
+            //AdjustCardLayout();
+        }
+        private void UpdatePlayerLabels()
+        {
+            if (gameMode == 2)
+            {
+                if (currentPlayer == 1)
+                {
+                    lblP1.Font = new Font(lblP1.Font, FontStyle.Bold);
+                    lblP1.ForeColor = Color.Black;
+                    lblP2.Font = new Font(lblP2.Font, FontStyle.Regular);
+                    lblP2.ForeColor = Color.Gray;
+                }
+                else
+                {
+                    lblP1.Font = new Font(lblP1.Font, FontStyle.Regular);
+                    lblP1.ForeColor = Color.Gray;
+                    lblP2.Font = new Font(lblP2.Font, FontStyle.Bold);
+                    lblP2.ForeColor = Color.Black;
+                }
+            }
+            else
+            {
+                lblP1.Font = new Font(lblP1.Font, FontStyle.Bold);
+            }
+        }
+        private string FormatTime(int seconds)
+        {
+            TimeSpan t = TimeSpan.FromSeconds(seconds);
+            return string.Format("{0:D2}:{1:D2}", t.Minutes, t.Seconds);
+        }
     }
 }

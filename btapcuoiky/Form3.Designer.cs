@@ -28,10 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnlCards = new System.Windows.Forms.Panel();
             this.lblTime = new System.Windows.Forms.Label();
             this.lblP2 = new System.Windows.Forms.Label();
             this.lblP1 = new System.Windows.Forms.Label();
+            this.gameTimer = new System.Windows.Forms.Timer(this.components);
+            this.FlipTimer = new System.Windows.Forms.Timer(this.components);
+            this.hardcoreTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // pnlCards
@@ -68,6 +72,16 @@
             this.lblP1.TabIndex = 4;
             this.lblP1.Text = "Người chơi 1";
             // 
+            // gameTimer
+            // 
+            this.gameTimer.Interval = 1000;
+            this.gameTimer.Tick += new System.EventHandler(this.gameTimer_Tick);
+            // 
+            // FlipTimer
+            // 
+            this.FlipTimer.Interval = 750;
+            this.FlipTimer.Tick += new System.EventHandler(this.FlipTimer_Tick);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -90,5 +104,8 @@
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Label lblP2;
         private System.Windows.Forms.Label lblP1;
+        private System.Windows.Forms.Timer gameTimer;
+        private System.Windows.Forms.Timer FlipTimer;
+        private System.Windows.Forms.Timer hardcoreTimer;
     }
 }
