@@ -28,35 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnSetup = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // btnExit
             // 
-            this.button1.Location = new System.Drawing.Point(258, 134);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(243, 77);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnExit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnExit.Location = new System.Drawing.Point(352, 233);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(96, 23);
+            this.btnExit.TabIndex = 5;
+            this.btnExit.Text = "Thoát";
+            this.btnExit.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnSetup
             // 
-            this.button2.Location = new System.Drawing.Point(258, 266);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(243, 77);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnSetup.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSetup.Location = new System.Drawing.Point(352, 194);
+            this.btnSetup.Name = "btnSetup";
+            this.btnSetup.Size = new System.Drawing.Size(96, 23);
+            this.btnSetup.TabIndex = 4;
+            this.btnSetup.Text = "Setup level";
+            this.btnSetup.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.btnSetup);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -65,8 +67,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnSetup;
     }
 }
 
