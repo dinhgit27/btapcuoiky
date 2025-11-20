@@ -39,10 +39,10 @@ namespace btapcuoiky
         private int cardCols; // Số cột bài
 
         private List<string> imageKeys = new List<string>()
-{
-    "image1", "image2", "image3", "image4", "image5", "image6", "image7", "image8", "image9", "image10",
-    "image11", "image12", "image13", "image14", "image15", "image16", "image17", "image18", "image19", "image20"
-};
+        {
+            "image1", "image2", "image3", "image4", "image5", "image6", "image7", "image8", "image9", "image10",
+            "image11", "image12", "image13", "image14", "image15", "image16", "image17", "image18", "image19", "image20"
+        };
 
         public Form3(int time, int cards, int mode, int hardcore)
         {
@@ -79,6 +79,7 @@ namespace btapcuoiky
             // Cần chạy rất nhanh để tạo cảm giác mượt (khoảng 60fps -> 16ms)
             hardcoreTimer.Interval = 15;
             hardcoreTimer.Tick += HardcoreTimer_Tick;
+            ApplyMysticalForestTheme();
         }
 
         private void SetupGame()
@@ -103,9 +104,31 @@ namespace btapcuoiky
             // -------------------------------------
 
             // 2. LƯU LẠI số hàng và số cột vào biến toàn cục
-            cardRows = 4; cardCols = 5;
-            if (totalCards == 30) { cardCols = 6; cardRows = 5; }
-            else if (totalCards == 40) { cardCols = 8; cardRows = 5; }
+            if (totalCards <= 20)
+            {
+                cardRows = 4;
+                cardCols = 5;
+            }
+            else if (totalCards <= 30)
+            {
+                cardRows = 5;
+                cardCols = 6;
+            }
+            else if (totalCards <= 40)
+            {
+                cardRows = 5;
+                cardCols = 8;
+            }
+            else if (totalCards <= 54)
+            {
+                cardRows = 6;
+                cardCols = 9;
+            }
+            else
+            {
+                cardRows = 6;
+                cardCols = 10;
+            }
 
             // 3. VẼ CÁC NÚT (KHÔNG CÓ KÍCH THƯỚC)
             for (int i = 0; i < totalCards; i++)
@@ -130,6 +153,7 @@ namespace btapcuoiky
 
             // 4. Gọi hàm điều chỉnh layout lần đầu tiên để thiết lập vị trí/kích thước ban đầu
             AdjustCardLayout();
+            StyleAllCards();
         }
 
         private void Shuffle(List<string> list)
@@ -336,32 +360,26 @@ namespace btapcuoiky
 
         private void Form3_Resize(object sender, EventArgs e)
         {
-            // 1. Định vị Labels (Luôn chạy để chữ không bị lệch)
-            int topMargin = 10;
-            int spacing = 50;
+            // Cập nhật lại vị trí label
+            const int top = 15;
+            lblTime.Left = 20;
+            lblTime.Top = top;
 
-            lblTime.Left = 10;
-            lblTime.Top = topMargin;
-
-            if (lblP1 != null && lblP2 != null)
+            if (gameMode == 2)
             {
-                int totalPlayerWidth = lblP1.Width + lblP2.Width + spacing;
-                int centerX = this.ClientSize.Width / 2;
-
-                lblP1.Left = centerX - (totalPlayerWidth / 2);
-                lblP2.Left = lblP1.Right + spacing;
-
-                lblP1.Top = topMargin;
-                lblP2.Top = topMargin;
+                int center = this.ClientSize.Width / 2;
+                lblP1.Top = top;
+                lblP2.Top = top;
+                lblP1.Left = center - lblP1.Width - 40;
+                lblP2.Left = center + 40;
             }
 
-            // 2. CHỈNH SỬA: Nếu đang hoạt hình bay lượn, KHÔNG chỉnh layout bài
-            // Tránh việc lá bài đang bay bị bắt ép quay về lưới, gây lỗi hiển thị
-            if (isAnimating) return;
+            // QUAN TRỌNG: Không được return nếu đang animating nữa!
+            // Vì nếu đang bay thì vẫn phải cập nhật vị trí panel + label
+            // Chỉ không cập nhật vị trí từng lá bài thôi
+            if (isAnimating) return; // vẫn giữ dòng này
 
-            // 3. Nếu không bay, tính toán lại bình thường
             AdjustCardLayout();
-            this.Refresh();
         }
 
         private void UpdatePlayerLabels()
@@ -420,51 +438,156 @@ namespace btapcuoiky
         {
             if (pnlCards.Controls.Count == 0 || cardCols == 0 || cardRows == 0) return;
 
-            // --- A. TÍNH TOÁN KÍCH THƯỚC (GIỮ NGUYÊN) ---
-            const int H_HEADER = 60;
-            int maxCardWidth = (this.ClientSize.Width - 20) / cardCols;
-            int maxCardHeight = (this.ClientSize.Height - H_HEADER - 90) / cardRows;
+            // === KÍCH THƯỚC CỐ ĐỊNH THEO YÊU CẦU CỦA BẠN ===
+            const int CARD_WIDTH = 100;   // chiều rộng
+            const int CARD_HEIGHT = 150;   // chiều cao
+            const int GAP = 15;    // khoảng cách giữa các lá bài (có thể chỉnh)
 
-            int newCardSize = Math.Min(maxCardWidth, maxCardHeight);
-            newCardSize = Math.Max(40, newCardSize);
+            // Tính kích thước panel dựa trên kích thước cố định
+            int panelWidth = cardCols * CARD_WIDTH + (cardCols + 1) * GAP;
+            int panelHeight = cardRows * CARD_HEIGHT + (cardRows + 1) * GAP;
 
-            int newGap = newCardSize / 10;
-            if (newGap < 4) newGap = 4;
+            pnlCards.Width = panelWidth;
+            pnlCards.Height = panelHeight;
 
-            int newPnlWidth = cardCols * newCardSize + (cardCols + 1) * newGap;
-            int newPnlHeight = cardRows * newCardSize + (cardRows + 1) * newGap;
+            // Căn giữa panel trong form
+            pnlCards.Left = (this.ClientSize.Width - panelWidth) / 2;
+            pnlCards.Top = (this.ClientSize.Height - panelHeight) / 2;
 
-            pnlCards.Width = newPnlWidth;
-            pnlCards.Height = newPnlHeight;
-
-            // --- B. CĂN GIỮA PANEL (GIỮ NGUYÊN) ---
-            pnlCards.Left = (this.ClientSize.Width - newPnlWidth) / 2;
-            int availableHeight = this.ClientSize.Height - H_HEADER;
-
-            if (newPnlHeight < availableHeight)
-                pnlCards.Top = H_HEADER + (availableHeight - newPnlHeight) / 2 - 10;
-            else
-                pnlCards.Top = H_HEADER;
-            if (pnlCards.Top < H_HEADER) pnlCards.Top = H_HEADER;
-
-            // --- C. CẬP NHẬT VỊ TRÍ (SỬA ĐỔI QUAN TRỌNG) ---
+            // Đặt vị trí + bo tròn cho từng lá bài
+            int index = 0;
             foreach (Control c in pnlCards.Controls)
             {
-                Button btn = (Button)c;
+                if (c is Button btn)
+                {
+                    int row = index / cardCols;
+                    int col = index % cardCols;
 
-                // Lấy thông tin từ Tag
-                Tuple<string, int> tagInfo = (Tuple<string, int>)btn.Tag;
-                int logicalIndex = tagInfo.Item2; // Đây là vị trí logic trong lưới
+                    btn.Width = CARD_WIDTH;
+                    btn.Height = CARD_HEIGHT;
 
-                // Tính toán dòng/cột dựa trên LOGICAL INDEX, không phải vòng lặp i
-                int r = logicalIndex / cardCols;
-                int cIdx = logicalIndex % cardCols;
+                    btn.Left = GAP + col * (CARD_WIDTH + GAP);
+                    btn.Top = GAP + row * (CARD_HEIGHT + GAP);
 
-                btn.Width = newCardSize;
-                btn.Height = newCardSize;
-                btn.Left = newGap + cIdx * (newCardSize + newGap);
-                btn.Top = newGap + r * (newCardSize + newGap);
+                    // Bo tròn 4 góc (20px) – vẫn đẹp với hình chữ nhật
+                    var path = new System.Drawing.Drawing2D.GraphicsPath();
+                    int radius = 20;
+                    var rect = new Rectangle(0, 0, btn.Width, btn.Height);
+
+                    path.AddArc(rect.X, rect.Y, radius, radius, 180, 90);
+                    path.AddArc(rect.Width - radius, rect.Y, radius, radius, 270, 90);
+                    path.AddArc(rect.Width - radius, rect.Height - radius, radius, radius, 0, 90);
+                    path.AddArc(rect.X, rect.Height - radius, radius, radius, 90, 90);
+                    path.CloseAllFigures();
+
+                    btn.Region = new Region(path);
+
+                    index++;
+                }
             }
+
+            // Nếu bạn muốn panel luôn ở giữa ngay cả khi resize
+            pnlCards.Anchor = AnchorStyles.None;
+        }
+        
+        private void ApplyMysticalForestTheme()
+        {
+            // 1. Nền Form - Rừng sâu huyền bí
+            this.BackgroundImage = Properties.Resources.backgroud_cd2; // bạn thêm ảnh này vào Resources nhé!
+            this.BackgroundImageLayout = ImageLayout.Stretch;
+            this.BackColor = Color.FromArgb(15, 40, 25);
+
+            // 2. Panel chứa bài - trong suốt + viền phát sáng nhẹ
+            pnlCards.BackColor = Color.FromArgb(80, 0, 30, 0); // gần trong suốt
+            pnlCards.BorderStyle = BorderStyle.None;
+
+            // Tạo hiệu ứng glow viền cho panel
+            pnlCards.Paint += (s, e) =>
+            {
+                ControlPaint.DrawBorder(e.Graphics, pnlCards.ClientRectangle,
+                    Color.FromArgb(100, 150, 255, 150), 2, ButtonBorderStyle.Solid,
+                    Color.FromArgb(100, 150, 255, 150), 2, ButtonBorderStyle.Solid,
+                    Color.FromArgb(120, 100, 255, 100), 4, ButtonBorderStyle.Solid,
+                    Color.FromArgb(120, 100, 255, 100), 4, ButtonBorderStyle.Solid);
+            };
+
+            // 3. Các Label (Thời gian + Người chơi) - Font fantasy + bóng đổ + glow
+            Font fantasyFont = new Font("Segoe UI", 14F, FontStyle.Bold);
+            Font timeFont = new Font("Consolas", 22F, FontStyle.Bold);
+
+            lblTime.Font = timeFont;
+            lblTime.ForeColor = Color.LimeGreen;
+            lblTime.BackColor = Color.FromArgb(100, 0, 0, 0);
+            lblTime.TextAlign = ContentAlignment.MiddleCenter;
+            lblTime.Padding = new Padding(10);
+            lblTime.BorderStyle = BorderStyle.None;
+
+            // Glow cho thời gian
+            lblTime.Paint += (s, e) =>
+            {
+                e.Graphics.DrawRectangle(new Pen(Color.FromArgb(80, 0, 255, 0), 4),
+                    new Rectangle(0, 0, lblTime.Width - 1, lblTime.Height - 1));
+            };
+
+            lblP1.Font = fantasyFont;
+            lblP2.Font = fantasyFont;
+            lblP1.ForeColor = Color.PaleGreen;
+            lblP2.ForeColor = Color.PaleGreen;
+            lblP1.BackColor = Color.FromArgb(120, 0, 40, 20);
+            lblP2.BackColor = Color.FromArgb(120, 0, 40, 20);
+            lblP1.Padding = new Padding(15, 8, 15, 8);
+            lblP2.Padding = new Padding(15, 8, 15, 8);
+
+            // Bo góc cho label người chơi
+            lblP1.Region = CreateRoundedRegion(lblP1.ClientRectangle, 20);
+            lblP2.Region = CreateRoundedRegion(lblP2.ClientRectangle, 20);
+        }
+
+        // Hàm tạo vùng bo tròn (dùng cho label)
+        private Region CreateRoundedRegion(Rectangle rect, int radius)
+        {
+            System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
+            path.AddArc(rect.X, rect.Y, radius, radius, 180, 90);
+            path.AddArc(rect.Right - radius, rect.Y, radius, radius, 270, 90);
+            path.AddArc(rect.Right - radius, rect.Bottom - radius, radius, radius, 0, 90);
+            path.AddArc(rect.X, rect.Bottom - radius, radius, radius, 90, 90);
+            path.CloseFigure();
+            return new Region(path);
+        }
+
+        // 4. Trang trí từng lá bài (gọi sau khi tạo các Button trong SetupGame())
+        private void StyleAllCards()
+        {
+            foreach (Control c in pnlCards.Controls)
+            {
+                if (c is Button btn)
+                {
+                    btn.FlatStyle = FlatStyle.Flat;
+                    btn.FlatAppearance.BorderSize = 0;
+                    btn.BackColor = Color.FromArgb(40, 100, 60);
+
+                    // Hover phát sáng xanh
+                    btn.MouseEnter += (s, e) => {
+                        btn.BackColor = Color.FromArgb(100, 150, 255, 150);
+                        btn.FlatAppearance.BorderSize = 4;
+                        btn.FlatAppearance.BorderColor = Color.LimeGreen;
+                    };
+                    btn.MouseLeave += (s, e) => {
+                        btn.BackColor = Color.FromArgb(40, 100, 60);
+                        btn.FlatAppearance.BorderSize = 0;
+                    };
+
+                    // Mặt sau
+                    if (Properties.Resources.ResourceManager.GetObject("cardback_forest") is Image img)
+                        btn.BackgroundImage = img;
+                    btn.BackgroundImageLayout = ImageLayout.Stretch;
+                }
+            }
+        }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
         }
     }
 }

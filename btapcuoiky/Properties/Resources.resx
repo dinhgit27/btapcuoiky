@@ -133,14 +133,11 @@
   <data name="image20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\..\hinhanh\image20.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="image7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\..\hinhanh\image7.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="lathinhvip" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lathinhvip.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="image11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\..\hinhanh\image11.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="lathinhvip" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lathinhvip.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="image6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\..\hinhanh\image6.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -153,6 +150,15 @@
   </data>
   <data name="image2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\..\hinhanh\image2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="backgroud_label2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\backgroud_label2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="image7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\hinhanh\image7.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="backgroud_cd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\backgroud_cd.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="image16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\..\hinhanh\image16.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,8 +193,14 @@
   <data name="backgroud_button1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\backgroud_button1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="backgroud_cd3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\backgroud_cd3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="backgroud_group" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\backgroud_group.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="backgroud_cd2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\backgroud_cd2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="backgroud" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\backgroud.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,7 +211,7 @@
   <data name="image9" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\..\hinhanh\image9.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="backgroud_label2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\backgroud_label2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="hinhthu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hinhthu.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
