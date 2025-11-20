@@ -118,6 +118,73 @@ namespace btapcuoiky
             }
 
             //AdjustCardLayout();
+
+        }
+        private void Shuffle(List<string> list)
+        {
+            Random rng = new Random();
+            int n = list.Count;
+            while (n > 1)
+            {
+                n--;
+                int k = rng.Next(n + 1);
+                string value = list[k];
+                list[k] = list[n];
+                list[n] = value;
+            }
+        }
+        private void Card_Click(object sender, EventArgs e)
+        {
+            //if (FlipTimer.Enabled || hardcoreTimer.Enabled) return;
+
+            Button clickedButton = sender as Button;
+
+            if (clickedButton != null)
+            {
+                if (clickedButton.ForeColor == Color.Black) return;
+                Tuple<string, int> tagInfo = (Tuple<string, int>)clickedButton.Tag;
+                string imageKey = tagInfo.Item1;
+                Image frontImage = (Image)Properties.Resources.ResourceManager.GetObject(imageKey);
+
+                if (frontImage != null)
+                {
+                    clickedButton.BackgroundImage = frontImage;
+                    clickedButton.BackgroundImageLayout = ImageLayout.Stretch;
+
+                    clickedButton.ForeColor = Color.Black;
+                    clickedButton.Text = "";
+                }
+
+                if (hardcoreMode > 0)
+                {
+                    moveSpeed = (hardcoreMode == 1) ? 10 : 25;
+                    shuffleCount = 0;
+                    isAnimating = false;
+                    animCard1 = clickedButton;
+                    //hardcoreTimer.Start();
+                }
+                else
+                {
+                    //ProcessCardSelection(clickedButton);
+                }
+            }
+        }
+        private bool MoveTowards(Button btn, Point dest, int speed)
+        {
+            int dx = dest.X - btn.Left;
+            int dy = dest.Y - btn.Top;
+
+            double distance = Math.Sqrt(dx * dx + dy * dy);
+
+            if (distance <= speed)
+            {
+                return true; 
+            }
+            double ratio = speed / distance;
+            btn.Left += (int)(dx * ratio);
+            btn.Top += (int)(dy * ratio);
+
+            return false; 
         }
     }
 }
