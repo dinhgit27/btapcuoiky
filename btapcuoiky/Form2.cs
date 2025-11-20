@@ -59,5 +59,10 @@ namespace btapcuoiky
             form3.ShowDialog();
             this.Close();
         }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
     }
 }

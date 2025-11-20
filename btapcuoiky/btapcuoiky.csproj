@@ -98,5 +98,26 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backgroud.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backgroud2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lathinhvip.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backgroud_group.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backgroud_button.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backgroud_button1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backgroud_label2.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

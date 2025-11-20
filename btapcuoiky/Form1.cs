@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
 
 namespace btapcuoiky
 {
@@ -19,7 +20,7 @@ namespace btapcuoiky
             //btnSetup.Click += BtnSetup_Click;
             //btnExit.Click += BtnExit_Click;
         }
-
+        
         private void btnSetup_Click(object sender, EventArgs e)
         {
             // Ẩn Form 1 và mở Form 2
@@ -47,5 +48,13 @@ namespace btapcuoiky
             }
             // Nếu chọn No thì hộp thoại tự tắt, không làm gì thêm
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            label1.BackColor = System.Drawing.Color.Transparent;
+            label2.BackColor = System.Drawing.Color.Transparent;
+        }
+
+        
     }
 }
