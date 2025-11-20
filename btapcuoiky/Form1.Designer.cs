@@ -41,6 +41,7 @@
             this.btnExit.TabIndex = 5;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnSetup
             // 
@@ -51,6 +52,7 @@
             this.btnSetup.TabIndex = 4;
             this.btnSetup.Text = "Setup level";
             this.btnSetup.UseVisualStyleBackColor = true;
+            this.btnSetup.Click += new System.EventHandler(this.btnSetup_Click);
             // 
             // Form1
             // 
