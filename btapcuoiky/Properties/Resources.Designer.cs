@@ -73,9 +73,9 @@ namespace btapcuoiky.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Image1 {
+        internal static System.Drawing.Bitmap image1 {
             get {
-                object obj = ResourceManager.GetObject("Image1", resourceCulture);
+                object obj = ResourceManager.GetObject("image1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,9 +183,9 @@ namespace btapcuoiky.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Image2 {
+        internal static System.Drawing.Bitmap image2 {
             get {
-                object obj = ResourceManager.GetObject("Image2", resourceCulture);
+                object obj = ResourceManager.GetObject("image2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,9 +203,9 @@ namespace btapcuoiky.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Image3 {
+        internal static System.Drawing.Bitmap image3 {
             get {
-                object obj = ResourceManager.GetObject("Image3", resourceCulture);
+                object obj = ResourceManager.GetObject("image3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,9 +213,9 @@ namespace btapcuoiky.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Image4 {
+        internal static System.Drawing.Bitmap image4 {
             get {
-                object obj = ResourceManager.GetObject("Image4", resourceCulture);
+                object obj = ResourceManager.GetObject("image4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

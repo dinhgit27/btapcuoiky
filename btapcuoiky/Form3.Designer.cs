@@ -40,9 +40,9 @@
             // 
             // pnlCards
             // 
-            this.pnlCards.Location = new System.Drawing.Point(3, 36);
+            this.pnlCards.Location = new System.Drawing.Point(3, 25);
             this.pnlCards.Name = "pnlCards";
-            this.pnlCards.Size = new System.Drawing.Size(898, 486);
+            this.pnlCards.Size = new System.Drawing.Size(898, 400);
             this.pnlCards.TabIndex = 7;
             // 
             // lblTime
@@ -86,7 +86,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(902, 522);
+            this.ClientSize = new System.Drawing.Size(902, 426);
             this.Controls.Add(this.pnlCards);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.lblP2);
