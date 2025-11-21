@@ -278,15 +278,19 @@ namespace btapcuoiky
 
             if (distance <= speed)
             {
-                return true; // Đã đến nơi (hoặc rất gần)
+                btn.Location = dest; // Gán trực tiếp đích đến
+                return true;
             }
 
             // Tính tỉ lệ di chuyển
             double ratio = speed / distance;
-            btn.Left += (int)(dx * ratio);
-            btn.Top += (int)(dy * ratio);
+            int newX = btn.Left + (int)(dx * ratio);
+            int newY = btn.Top + (int)(dy * ratio);
 
-            return false; // Chưa đến
+            // Gộp việc thay đổi vị trí vào 1 lệnh duy nhất
+            btn.Location = new Point(newX, newY);
+
+            return false;
         }
 
         private void ProcessCardSelection(Button clickedButton)
@@ -436,14 +440,15 @@ namespace btapcuoiky
         }
         private void AdjustCardLayout()
         {
+            // Kiểm tra an toàn
             if (pnlCards.Controls.Count == 0 || cardCols == 0 || cardRows == 0) return;
 
-            // === KÍCH THƯỚC CỐ ĐỊNH THEO YÊU CẦU CỦA BẠN ===
-            const int CARD_WIDTH = 100;   // chiều rộng
-            const int CARD_HEIGHT = 150;   // chiều cao
-            const int GAP = 15;    // khoảng cách giữa các lá bài (có thể chỉnh)
+            // === KÍCH THƯỚC CỐ ĐỊNH ===
+            const int CARD_WIDTH = 100;   // Chiều rộng lá bài
+            const int CARD_HEIGHT = 150;  // Chiều cao lá bài
+            const int GAP = 15;           // Khoảng cách giữa các lá bài
 
-            // Tính kích thước panel dựa trên kích thước cố định
+            // Tính toán kích thước panel để vừa khít số bài
             int panelWidth = cardCols * CARD_WIDTH + (cardCols + 1) * GAP;
             int panelHeight = cardRows * CARD_HEIGHT + (cardRows + 1) * GAP;
 
@@ -454,7 +459,7 @@ namespace btapcuoiky
             pnlCards.Left = (this.ClientSize.Width - panelWidth) / 2;
             pnlCards.Top = (this.ClientSize.Height - panelHeight) / 2;
 
-            // Đặt vị trí + bo tròn cho từng lá bài
+            // Đặt vị trí cho từng lá bài
             int index = 0;
             foreach (Control c in pnlCards.Controls)
             {
@@ -469,24 +474,16 @@ namespace btapcuoiky
                     btn.Left = GAP + col * (CARD_WIDTH + GAP);
                     btn.Top = GAP + row * (CARD_HEIGHT + GAP);
 
-                    // Bo tròn 4 góc (20px) – vẫn đẹp với hình chữ nhật
-                    var path = new System.Drawing.Drawing2D.GraphicsPath();
-                    int radius = 20;
-                    var rect = new Rectangle(0, 0, btn.Width, btn.Height);
-
-                    path.AddArc(rect.X, rect.Y, radius, radius, 180, 90);
-                    path.AddArc(rect.Width - radius, rect.Y, radius, radius, 270, 90);
-                    path.AddArc(rect.Width - radius, rect.Height - radius, radius, radius, 0, 90);
-                    path.AddArc(rect.X, rect.Height - radius, radius, radius, 90, 90);
-                    path.CloseAllFigures();
-
-                    btn.Region = new Region(path);
+                    // --- ĐÃ XÓA PHẦN REGION (BO TRÒN) ĐỂ TỐI ƯU TỐC ĐỘ ---
+                    // Việc cắt góc (Region) yêu cầu tính toán lại mỗi mili-giây khi bài bay,
+                    // gây ra lag nặng. Nếu muốn bài bo tròn, hãy dùng hình ảnh (png) đã bo tròn sẵn.
+                    btn.Region = null;
 
                     index++;
                 }
             }
 
-            // Nếu bạn muốn panel luôn ở giữa ngay cả khi resize
+            // Giữ panel ở giữa khi resize
             pnlCards.Anchor = AnchorStyles.None;
         }
         
@@ -588,6 +585,24 @@ namespace btapcuoiky
         private void Form3_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
+
+            // Bật DoubleBuffered cho Panel pnlCards bằng code
+            typeof(Panel).InvokeMember("DoubleBuffered",
+                System.Reflection.BindingFlags.SetProperty |
+                System.Reflection.BindingFlags.Instance |
+                System.Reflection.BindingFlags.NonPublic,
+                null, pnlCards, new object[] { true });
+        }
+        public class DoubleBufferedPanel : Panel
+        {
+            public DoubleBufferedPanel()
+            {
+                this.DoubleBuffered = true;
+                this.SetStyle(ControlStyles.AllPaintingInWmPaint |
+                              ControlStyles.UserPaint |
+                              ControlStyles.OptimizedDoubleBuffer, true);
+                this.UpdateStyles();
+            }
         }
     }
 }

@@ -82,7 +82,7 @@
             this.groupBox1.Controls.Add(this.btnExit);
             this.groupBox1.Controls.Add(this.btnSetup);
             this.groupBox1.Controls.Add(this.pictureBox2);
-            this.groupBox1.Location = new System.Drawing.Point(137, 53);
+            this.groupBox1.Location = new System.Drawing.Point(120, 26);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1295, 579);
             this.groupBox1.TabIndex = 6;
@@ -142,7 +142,7 @@
             this.AutoSize = true;
             this.BackgroundImage = global::btapcuoiky.Properties.Resources.backgroud2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1474, 666);
+            this.ClientSize = new System.Drawing.Size(1441, 613);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "Form1";
