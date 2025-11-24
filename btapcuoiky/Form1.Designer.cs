@@ -140,7 +140,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackgroundImage = global::btapcuoiky.Properties.Resources.backgroud2;
+            this.BackgroundImage = global::btapcuoiky.Properties.Resources.backgroud_cd2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1441, 613);
             this.Controls.Add(this.groupBox1);

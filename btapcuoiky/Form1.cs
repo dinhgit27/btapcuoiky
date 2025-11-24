@@ -67,7 +67,7 @@ namespace btapcuoiky
             // Thiết lập vị trí mới
             groupBox1.Location = new System.Drawing.Point(x, y);
             label1.BackColor = System.Drawing.Color.Transparent;
-            label2.BackColor = System.Drawing.Color.Transparent;
+
         }
 
         
