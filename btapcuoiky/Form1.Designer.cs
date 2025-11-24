@@ -42,21 +42,21 @@
             // btnExit
             // 
             this.btnExit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnExit.BackgroundImage = global::btapcuoiky.Properties.Resources.backgroud_button1;
+            this.btnExit.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnExit.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.ForeColor = System.Drawing.Color.Red;
+            this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnExit.Location = new System.Drawing.Point(838, 348);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(177, 38);
             this.btnExit.TabIndex = 5;
             this.btnExit.Text = "Thoát";
-            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnSetup
             // 
             this.btnSetup.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSetup.BackgroundImage = global::btapcuoiky.Properties.Resources.backgroud_button;
+            this.btnSetup.BackColor = System.Drawing.Color.SkyBlue;
             this.btnSetup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSetup.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSetup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -65,7 +65,7 @@
             this.btnSetup.Size = new System.Drawing.Size(353, 65);
             this.btnSetup.TabIndex = 4;
             this.btnSetup.Text = "BẮT ĐẦU";
-            this.btnSetup.UseVisualStyleBackColor = true;
+            this.btnSetup.UseVisualStyleBackColor = false;
             this.btnSetup.Click += new System.EventHandler(this.btnSetup_Click);
             // 
             // groupBox1
@@ -129,7 +129,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackgroundImage = global::btapcuoiky.Properties.Resources.backgroud2;
+            this.BackgroundImage = global::btapcuoiky.Properties.Resources.backgroud_cd3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1474, 666);
             this.Controls.Add(this.groupBox1);
