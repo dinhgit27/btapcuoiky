@@ -42,7 +42,7 @@
             // 
             this.pnlCards.Location = new System.Drawing.Point(3, 25);
             this.pnlCards.Name = "pnlCards";
-            this.pnlCards.Size = new System.Drawing.Size(898, 400);
+            this.pnlCards.Size = new System.Drawing.Size(899, 402);
             this.pnlCards.TabIndex = 7;
             // 
             // lblTime

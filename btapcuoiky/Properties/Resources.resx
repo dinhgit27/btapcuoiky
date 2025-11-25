@@ -157,6 +157,9 @@
   <data name="image7" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\..\hinhanh\image7.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="hinhthu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hinhthu.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="backgroud_cd" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\backgroud_cd.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -190,6 +193,9 @@
   <data name="image3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\..\hinhanh\image3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="nenform1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nenform1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="backgroud_button1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\backgroud_button1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -211,7 +217,7 @@
   <data name="image9" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\..\hinhanh\image9.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="hinhthu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\hinhthu.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="nenform2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nenform2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

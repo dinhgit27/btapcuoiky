@@ -490,9 +490,9 @@ namespace btapcuoiky
         private void ApplyMysticalForestTheme()
         {
             // 1. Nền Form - Rừng sâu huyền bí
-            this.BackgroundImage = Properties.Resources.backgroud_cd2; // bạn thêm ảnh này vào Resources nhé!
+            this.BackgroundImage = Properties.Resources.nenform1; 
             this.BackgroundImageLayout = ImageLayout.Stretch;
-            this.BackColor = Color.FromArgb(15, 40, 25);
+            //this.BackColor = Color.FromArgb(15, 40, 25);
 
             // 2. Panel chứa bài - trong suốt + viền phát sáng nhẹ
             pnlCards.BackColor = Color.FromArgb(80, 0, 30, 0); // gần trong suốt

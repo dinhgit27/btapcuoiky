@@ -52,7 +52,8 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.groupBox3.BackgroundImage = global::btapcuoiky.Properties.Resources.backgroud_cd2;
+            this.groupBox3.BackgroundImage = global::btapcuoiky.Properties.Resources.nenform2;
+            this.groupBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.groupBox3.Controls.Add(this.groupBox4);
             this.groupBox3.Controls.Add(this.groupBox2);
             this.groupBox3.Controls.Add(this.label2);
@@ -70,7 +71,7 @@
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.groupBox4.BackgroundImage = global::btapcuoiky.Properties.Resources.backgroud_cd3;
+            this.groupBox4.BackgroundImage = global::btapcuoiky.Properties.Resources.image7;
             this.groupBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.groupBox4.Controls.Add(this.label3);
             this.groupBox4.Location = new System.Drawing.Point(0, 0);
@@ -83,7 +84,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Impact", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(102, 103);
+            this.label3.Location = new System.Drawing.Point(114, 71);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(146, 45);
             this.label3.TabIndex = 20;
@@ -98,7 +99,7 @@
             this.groupBox2.Controls.Add(this.rbHardcoreX3);
             this.groupBox2.Controls.Add(this.rbHardcoreX2);
             this.groupBox2.Font = new System.Drawing.Font("Sitka Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.groupBox2.ForeColor = System.Drawing.Color.Black;
             this.groupBox2.Location = new System.Drawing.Point(756, 169);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(334, 228);
@@ -111,7 +112,7 @@
             this.rbNormal.AutoSize = true;
             this.rbNormal.Checked = true;
             this.rbNormal.Font = new System.Drawing.Font("Sitka Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbNormal.ForeColor = System.Drawing.Color.Blue;
+            this.rbNormal.ForeColor = System.Drawing.Color.White;
             this.rbNormal.Location = new System.Drawing.Point(34, 142);
             this.rbNormal.Name = "rbNormal";
             this.rbNormal.Size = new System.Drawing.Size(163, 39);
@@ -124,7 +125,7 @@
             // 
             this.rbHardcoreX3.AutoSize = true;
             this.rbHardcoreX3.Font = new System.Drawing.Font("Sitka Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbHardcoreX3.ForeColor = System.Drawing.Color.Blue;
+            this.rbHardcoreX3.ForeColor = System.Drawing.Color.White;
             this.rbHardcoreX3.Location = new System.Drawing.Point(34, 92);
             this.rbHardcoreX3.Name = "rbHardcoreX3";
             this.rbHardcoreX3.Size = new System.Drawing.Size(214, 39);
@@ -137,7 +138,7 @@
             // 
             this.rbHardcoreX2.AutoSize = true;
             this.rbHardcoreX2.Font = new System.Drawing.Font("Sitka Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbHardcoreX2.ForeColor = System.Drawing.Color.Blue;
+            this.rbHardcoreX2.ForeColor = System.Drawing.Color.White;
             this.rbHardcoreX2.Location = new System.Drawing.Point(34, 43);
             this.rbHardcoreX2.Name = "rbHardcoreX2";
             this.rbHardcoreX2.Size = new System.Drawing.Size(215, 39);
@@ -150,7 +151,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Sitka Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(750, 103);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 35);
@@ -162,7 +163,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Sitka Display", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(388, 99);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(129, 39);
@@ -172,15 +173,15 @@
             // btnStart
             // 
             this.btnStart.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnStart.BackColor = System.Drawing.Color.White;
             this.btnStart.Font = new System.Drawing.Font("Sitka Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnStart.Image = global::btapcuoiky.Properties.Resources.backgroud_group;
+            this.btnStart.ForeColor = System.Drawing.Color.Black;
             this.btnStart.Location = new System.Drawing.Point(653, 430);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(165, 46);
             this.btnStart.TabIndex = 16;
             this.btnStart.Text = "Bắt Đầu";
-            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.UseVisualStyleBackColor = false;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // groupBox1
@@ -189,7 +190,7 @@
             this.groupBox1.Controls.Add(this.rb2Player);
             this.groupBox1.Controls.Add(this.rb1Player);
             this.groupBox1.Font = new System.Drawing.Font("Sitka Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(382, 169);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(338, 228);
@@ -201,7 +202,7 @@
             // 
             this.rb2Player.AutoSize = true;
             this.rb2Player.Font = new System.Drawing.Font("Sitka Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rb2Player.ForeColor = System.Drawing.Color.Blue;
+            this.rb2Player.ForeColor = System.Drawing.Color.White;
             this.rb2Player.Location = new System.Drawing.Point(29, 119);
             this.rb2Player.Name = "rb2Player";
             this.rb2Player.Size = new System.Drawing.Size(166, 39);
@@ -214,7 +215,7 @@
             // 
             this.rb1Player.AutoSize = true;
             this.rb1Player.Font = new System.Drawing.Font("Sitka Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rb1Player.ForeColor = System.Drawing.Color.Blue;
+            this.rb1Player.ForeColor = System.Drawing.Color.White;
             this.rb1Player.Location = new System.Drawing.Point(29, 63);
             this.rb1Player.Name = "rb1Player";
             this.rb1Player.Size = new System.Drawing.Size(162, 39);
@@ -257,9 +258,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::btapcuoiky.Properties.Resources.backgroud_group;
+            this.BackgroundImage = global::btapcuoiky.Properties.Resources.nenform1;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1449, 648);
             this.Controls.Add(this.groupBox3);
+            this.DoubleBuffered = true;
             this.Name = "Form2";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
