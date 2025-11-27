@@ -22,33 +22,21 @@ namespace btapcuoiky
             if (cbLevel.Items.Count > 0) cbLevel.SelectedIndex = 0;
 
             rb1Player.Checked = true;
-            // Giả sử bạn đã đặt tên 3 nút mới là rbNormal, rbHardcoreX2, rbHardcoreX3
-            // Nếu bạn chưa đặt tên trong Design thì nhớ đặt, hoặc dùng tên mặc định (radioButton1...)
-            // Ở đây mình mặc định bạn đặt tên chuẩn là: rbNormal, rbHardcoreX2, rbHardcoreX3
-            // Nếu chưa có rbNormal thì bạn cứ để mặc định code sẽ tự hiểu là 0.
         }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            // 1. Lấy Thời gian
             int totalTime = 120;
             if (cbTime.SelectedIndex == 1) totalTime = 180;
             else if (cbTime.SelectedIndex == 2) totalTime = 240;
 
-            // 2. Lấy Level
             int cardCount = 20;
             if (cbLevel.SelectedIndex == 1) cardCount = 30;
             else if (cbLevel.SelectedIndex == 2) cardCount = 40;
-
-            // 3. Lấy Chế độ người chơi
             int mode = rb1Player.Checked ? 1 : 2;
 
-            // 4. --- LẤY CHẾ ĐỘ HARDCORE ---
-            // 0 = Bình thường, 1 = X2 (Chậm), 2 = X3 (Nhanh)
             int hardcoreMode = 0;
 
-            // Lưu ý: Bạn cần thay tên rbHardcoreX2, rbHardcoreX3 đúng với tên bạn đặt trong Designer
-            // Nếu bạn chưa tạo nút rbNormal thì logic else cuối cùng sẽ lo việc đó
             if (rbHardcoreX2.Checked) hardcoreMode = 1;      // X2
             else if (rbHardcoreX3.Checked) hardcoreMode = 2; // X3
             else hardcoreMode = 0;                           // Bình thường
